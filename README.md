@@ -5,22 +5,24 @@ Practice with common algorithms and data structures in Python.
 
 Arrays
 
-Linked Lists
-
-Skip Lists*
-
-Hash Tables/Hashing Functions
+Backtracking
 
 Binary Trees
 
-Random Binary Search Trees*
+Linked Lists
 
-Scapegoat Trees*
+Graphs
 
-Red-Black Trees
+Hash Tables/Hashing Functions
 
 Heaps
 
-Sorting Algorithms
+Random Binary Search Trees*
 
-Graphs
+Red-Black Trees
+
+Scapegoat Trees*
+
+Skip Lists*
+
+Sorting Algorithms
