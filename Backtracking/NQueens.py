@@ -40,4 +40,51 @@ def isSafe(board: list[list[int]], row: int, column: int) -> bool:
     return True
 
 
+def solve(board: list[list[int]], row: int) -> bool:
+    """
+    It creates a state space tree and calls the safe function until it receives a
+    False Boolean and terminates that branch and backtracks to the next
+    possible solution branch.
+    """
+    if row >= len(board):
+        """
+        If the row number exceeds N we have board with a successful combination
+        and that combination is appended to the solution list and the board is printed.
 
+        """
+        solution.append(board)
+        printboard(board)
+        print()
+        return True
+    for i in range(len(board)):
+        """
+        For every row it iterates through each column to check if it is feasible to
+        place a queen there.
+        If all the combinations for that particular branch are successful the board is
+        reinitialized for the next possible combination.
+        """
+        if isSafe(board, row, i):
+            board[row][i] = 1
+            solve(board, row + 1)
+            board[row][i] = 0
+    return False
+
+
+def printboard(board: list[list[int]]) -> None:
+    """
+    Prints the boards that have a successful combination.
+    """
+    for i in range(len(board)):
+        for j in range(len(board)):
+            if board[i][j] == 1:
+                print("Q", end=" ")
+            else:
+                print(".", end=" ")
+        print()
+
+
+# n=int(input("The no. of queens"))
+n = 8
+board = [[0 for i in range(n)] for j in range(n)]
+solve(board, 0)
+print("The total no. of solutions are :", len(solution))
